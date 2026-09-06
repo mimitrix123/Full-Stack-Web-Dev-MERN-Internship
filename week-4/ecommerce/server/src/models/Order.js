@@ -1,0 +1,1 @@
+const mongoose=require('mongoose');module.exports=mongoose.model('Order',new mongoose.Schema({user:{type:mongoose.Schema.Types.ObjectId,ref:'User'},items:[{product:{type:mongoose.Schema.Types.ObjectId,ref:'Product'},name:String,price:Number,quantity:Number}],total:Number,status:{type:String,enum:['pending','paid','shipped','delivered'],default:'pending'}},{timestamps:true}));
